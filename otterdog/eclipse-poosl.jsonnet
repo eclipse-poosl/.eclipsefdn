@@ -6,11 +6,8 @@ orgs.newOrg('modeling.poosl', 'eclipse-poosl') {
     name: "Eclipse Poosl project",
     workflows+: {
       actions_can_approve_pull_request_reviews: false,
-      default_workflow_permissions: "read",
     },
   },
-  teams+: [
-  ],
   _repositories+:: [
     orgs.newRepo('poosl') {
       allow_merge_commit: true,
@@ -24,10 +21,6 @@ orgs.newOrg('modeling.poosl', 'eclipse-poosl') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
-      web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
       environments: [
         orgs.newEnvironment('github-pages'),
       ],
